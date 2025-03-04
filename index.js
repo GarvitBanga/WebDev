@@ -122,3 +122,14 @@ array2=array2.filter(function(x){
     return x.age>=25;
 }); 
 console.log(array2);
+
+
+// Parseint string to int
+
+function add(x, y) {
+    let val=parseInt(x)+parseInt(y);
+    return "Hello "+val;
+}
+console.log(add(10, 5));
+
+console.log(add("10", 5));
