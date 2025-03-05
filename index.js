@@ -133,3 +133,41 @@ function add(x, y) {
 console.log(add(10, 5));
 
 console.log(add("10", 5));
+
+
+const fsvar=require("fs");//importing fs module File system module
+const data=fsvar.readFileSync("a.txt","utf8");//reads file synchronously
+console.log(data);
+
+
+
+// Concurrency is not parallelism
+fsvar.readFile("b.txt","utf8",function(error,data){return console.log(data)});//reads file asynchronously
+//here function(error,data) is callback function    
+
+const data1=fsvar.readFile("b.txt","utf8",function(error,data){return console.log(data)});//reads file asynchronously
+console.log(data1);// returns undefined as it is asynchronous so data1 is undefined here
+
+
+setTimeout(function(){
+    console.log("Inside Timeout");
+},1000);
+
+console.log("After Timeout");
+
+//setTimeout is also aynchronous 
+
+
+console.log("Hi");
+
+
+setTimeout(function(){
+    console.log("Inside Timeout");
+},1000);
+let sum=0;
+for(let i=0;i<10000000000;i++){
+    sum=sum+i;
+}
+console.log("After for loop");
+
+// All the asynchronous functions will be printed after the above for loop execution is done because then only the thread is released it goes to callback queue and only picked when the call stack is done or finished the execution of the other CPU intensive tasks
