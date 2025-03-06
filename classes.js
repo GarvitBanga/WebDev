@@ -158,4 +158,29 @@ setTimeoutPromise(1000).then(callback); // promise version
 console.log("After promise ");
 
 
+let p=setTimeoutPromise(1000);
+console.log(p);
+// returns Promise { <pending> }
+
 // Promises are syntactically superior over callbacks
+
+
+
+
+
+
+
+
+
+function temp(resolve){
+    setTimeout(resolve, 1000);
+}
+function setTimeoutPromise1() {
+    return new Promise(temp);
+    // returns object of promise class
+}
+function callback1() {
+    console.log("after 1 second function promise");
+}
+setTimeoutPromise1().then(callback1); // promise version
+
