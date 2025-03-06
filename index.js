@@ -165,9 +165,15 @@ setTimeout(function(){
     console.log("Inside Timeout");
 },1000);
 let sum=0;
-for(let i=0;i<10000000000;i++){
+for(let i=0;i<1000000000;i++){
     sum=sum+i;
 }
 console.log("After for loop");
 
 // All the asynchronous functions will be printed after the above for loop execution is done because then only the thread is released it goes to callback queue and only picked when the call stack is done or finished the execution of the other CPU intensive tasks
+
+
+
+
+
+
