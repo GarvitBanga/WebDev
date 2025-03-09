@@ -1,0 +1,22 @@
+.todoelement{
+    color: red;
+    padding: 5px;
+    /* padding-left: 0px; */
+    margin: 10px;
+    /* margin-left: 0px; */
+    display: flex;
+}
+.todoelement h4{
+    color: red;
+    padding: 0px;
+    padding-right: 5px;
+
+    margin: 2px;
+}
+.todoelement button{
+    /* color: red; */
+    margin: 2px;
+    /* padding-right: 10px; */
+
+    /* margin: 0px; */
+}
