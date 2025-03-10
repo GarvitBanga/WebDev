@@ -4,13 +4,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "filetask": "node filetask.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "chalk": "^5.4.1"
+    "chalk": "^5.4.1",
+    "commander": "^13.1.0"
   }
 }
