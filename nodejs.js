@@ -3,3 +3,18 @@
 
 // BUN is faster than node
 
+
+
+// JSON _javascript object notation_
+
+let obj={
+    name:"Garvit",
+    age:25,
+    address:{
+        city:"Delhi",
+        state:"NCR"
+    }
+}
+
+console.log(obj);
+// { name: 'Garvit', age: 25, address: { city: 'Delhi', state: 'NCR' } }
