@@ -55,6 +55,7 @@ app.post("/todos",async function(req,res){
     console.log("HELLO",todos);
     let todo={
         "title":req.body.title,
+        // "title": req.query.title, if you want to get the title from the query string then the url will be like this http://localhost:3000/todos?title=hello
         "description":req.body.description,
         "user":req.body.user,
         "id":Math.floor(Math.random()*10000),
