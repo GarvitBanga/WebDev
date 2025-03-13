@@ -62,3 +62,8 @@ Middleware functions can perform the following tasks:
 2. Make changes to the request and the response objects.
 3. End the request-response cycle.
 4. Call the next middleware function in the stack.
+
+
+Axios is a promise based http client for the browser and Node.js
+Fetch is also same.
+
