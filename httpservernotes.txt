@@ -47,3 +47,18 @@ Express.js, or simply Express, is a back end web application framework for build
 req.params.firstname can alos be used to get the firstname from the url
 req.query.firstname can alos be used to get the firstname from the query string
 req.body.firstname can alos be used to get the firstname from the body
+
+
+
+
+MIDDLEWARE
+
+Express is a routing and middleware web framework that has minimal functionality of its own. An Express application is composed of a series of middleware function calls that are executed in the order that they are defined.
+Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle, denoted by a function parameter named next.
+
+Middleware functions can perform the following tasks:
+
+1. Execute any code.
+2. Make changes to the request and the response objects.
+3. End the request-response cycle.
+4. Call the next middleware function in the stack.
