@@ -47,6 +47,34 @@ app.get("/divide",function(req,res){
 });
 
 
+// Middleware
+let requestCount=0;
+function loggingMiddleware(req, res, next) {
+  console.log(`Middleware method is ${req.method} and url is ${req.url} and hostname is ${req.hostname} `);
+  console.log(new Date());
+  next();
+}
+app.use(loggingMiddleware);
+
+
+app.get("/multiplymiddleware",function(req,res){
+    
+    let ans=parseInt(req.query.a)*parseInt(req.query.b);
+    res.json({
+        answer:ans
+    });
+});
+
+
+app.get("/addmiddleware",function(req,res){
+    let ans=parseInt(req.query.a)+parseInt(req.query.b);
+    res.json({
+        answer:ans
+    });
+});
+
+app
+
 app.listen(3000,function(){
     console.log("Server is running on port 3000");
 });
