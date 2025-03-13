@@ -10,6 +10,12 @@
     Posts
     <div id="posts"></div>
     <div id="postsaxios"></div>
+    <button onclick="getPosts();">
+        Get Posts by fetch
+    </button>
+    <button onclick="getPostsaxios();">
+        Get Posts by axios
+    </button>
     <script>
         // alert("Hello");
         async function getPosts(){
@@ -19,15 +25,15 @@
         console.log(data);
         document.getElementById("posts").innerHTML=data.body;
         }
-        getPosts();
+        // getPosts();
 
 
         async function getPostsaxios(){
-        const response= await axios.get("https://jsonplaceholder.typicode.com/posts/1") //fetch function returns a promise
+        const response= await axios.get("https://jsonplaceholder.typicode.com/posts/2") //fetch function returns a promise
         console.log(response.data);
         document.getElementById("postsaxios").innerHTML=response.data.body;
         }
-        getPostsaxios();
+        // getPostsaxios();
         
     </script>
 </body>
