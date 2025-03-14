@@ -1,3 +1,5 @@
 you can use python  -m  http.server  3000  to run the server on port 3000 to have the files (html,js,css) served from the server
 
 you can use npx serve in a folder to serve the files from the folder
+
+npx serve from the public folder to serve the files from the public folder
