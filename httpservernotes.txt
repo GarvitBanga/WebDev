@@ -67,3 +67,6 @@ Middleware functions can perform the following tasks:
 Axios is a promise based http client for the browser and Node.js
 Fetch is also same.
 
+Cors is a mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served.
+Cors-Cross-Origin-Resource-Sharing
+should be blocked by default

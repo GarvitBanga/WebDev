@@ -16,8 +16,7 @@
     <button onclick="getPostsaxios();">
         Get Posts by axios
     </button>
-    <button onclick="getsumfrombackend()">Get Sum from Backend</button>
-    <div id="sumfrombackend"></div>
+   
     <script>
         // alert("Hello");
         async function getPosts(){
@@ -36,10 +35,7 @@
         document.getElementById("postsaxios").innerHTML=response.data.body;
         }
         // getPostsaxios();
-        async function getsumfrombackend(params) {
-            const response = await axios.get("http://localhost:3000/add?a=100&b=200");
-            document.getElementById("sumfrombackend").innerHTML=response.data;
-        }
+       
     </script>
 </body>
 </html>

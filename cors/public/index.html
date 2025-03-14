@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CORS</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.6/axios.min.js"></script>
+</head>
+<body>  
+    CORS
+    <input type="text" placeholder="Enter a number" id="a"></input>
+    <input type="text" placeholder="Enter a number" id="b"></input>
+    <button onclick="getsumfrombackendcors()">Get Sum from Backend</button>
+    <div id="sumfrombackend"></div>
+    <script>
+        async function getsumfrombackendcors(params) {
+            // alert("hi");
+            const response = await axios.post("http://localhost:3000/add",{a:document.getElementById("a").value,b:document.getElementById("b").value});
+            document.getElementById("sumfrombackend").innerHTML="Sum is "+response.data.answer;
+        }
+    </script>
+</body>
+</html>
