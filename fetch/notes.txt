@@ -1,0 +1,7 @@
+Fetch vs Axios
+Fetch is a promise based http client for the browser and node.js
+fetch exists as a global object in the browser and in node.js
+Axios is an external library for making http requests
+fetch is an  asynchronous function
+
+
