@@ -13,7 +13,7 @@ users=[]
 
 
 app.get('/', (req, res) => {
-  res.send('Hello from authentication!');
+  res.sendFile(__dirname+'/public/index.html');
 });
 
 app.post('/signup', (req, res) => {
@@ -75,7 +75,7 @@ function auth(req,res,next){
 }
 
 
-app.post('/me', auth,(req, res) => {
+app.get('/me', auth,(req, res) => {
    
     const user=users.find(u=>u.username==req.username);
     res.json({
