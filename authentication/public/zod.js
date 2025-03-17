@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const jwtPassword = "secret";
+const JWT_SECRET='JWT_SECRET';
 const zod = require("zod");
 
 const emailSchema = zod.string().email();
@@ -14,7 +14,7 @@ function signJwt(username, password) {
 
     const signature = jwt.sign({
         username
-    }, jwtPassword);
+    }, JWT_SECRET);
 
     return signature;
 }
@@ -22,7 +22,7 @@ function signJwt(username, password) {
 function verifyJwt(token) {
     let ans = true;
     try {
-       jwt.verify(token, jwtPassword);
+       jwt.verify(token, JWT_SECRET);
     } catch(e) {
        ans = false;
     }
