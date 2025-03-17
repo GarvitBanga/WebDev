@@ -12,3 +12,15 @@ Scalability: Many NoSQL databases are designed to scale out horizontally, making
 
 MongoDB is a NoSQL database that uses a document-oriented approach. Data is stored in flexible, JSON-like documents, which can have nested structures and varied fields.
 
+
+Why should you hash passwords?
+
+Password hashing is a technique used to securely store passwords in a way that makes them difficult to recover or misuse. Instead of storing the actual password, you store a hashed version of it. 
+
+salt- A popular approach to hashing passwords involves using a hashing algorithm that incorporates a salt—a random value added to the password before hashing. This prevents attackers from using precomputed tables (rainbow tables) to crack passwords.
+
+Bcrypt: It is a cryptographic hashing algorithm designed for securely hashing passwords. Developed by Niels Provos and David Mazières in 1999, bcrypt incorporates a salt and is designed to be computationally expensive, making brute-force attacks more difficult.
+
+
+Hashing is a one-way function, meaning that it is computationally infeasible to reverse the process and obtain the original input.
+
