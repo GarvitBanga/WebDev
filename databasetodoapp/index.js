@@ -6,7 +6,11 @@ const JWT_SECRET='JWT_SECRET';
 const { ObjectId } = require('mongodb');
 
 const mongoose=require('mongoose'); 
-mongoose.connect('mongodb+srv://garvitadmin:HonMw8pZh76e61d5@cluster0.h0hzv.mongodb.net/todoapp-database');
+const fs=require('fs');
+const path=require('path');
+const dblink=fs.readFileSync(path.join(__dirname,'../mongodblink'),'utf8');  
+mongoose.connect(dblink);
+
 
 const { UserModel, TodosModel } = require("./db");
 
