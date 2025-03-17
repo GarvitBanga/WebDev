@@ -6,9 +6,13 @@ const JWT_SECRET='JWT_SECRET';
 const { ObjectId } = require('mongodb');
 
 const mongoose=require('mongoose'); 
-const fs=require('fs');
-const path=require('path');
-const dblink=fs.readFileSync(path.join(__dirname,'../mongodblink'),'utf8');  
+
+const path = require('path');
+const dotenv = require('dotenv');
+const envPath = path.resolve(__dirname, '../.env');
+dotenv.config({ path: envPath });
+const dblink = process.env.DB_LINK;
+// console.log("dblink",dblink);
 mongoose.connect(dblink);
 
 
