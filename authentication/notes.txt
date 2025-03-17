@@ -1,0 +1,9 @@
+Stateful tokens are tokens that are generated for each user and are stored in the database.
+
+The problem is that we need to send a request to the database to get the token for each request, everytime the user wants to hit an authenticated endpoint.
+
+JWTs
+JSON web tokens are a compact and self contained way to represent information between 2 parties.
+Commonly used for authentication and information exchange in web applications.
+JWTs are Stateless-contain all information needed to authenticate a request, so the server doesn't need to store sesssion information. All the data is stored in the JWT itself.
+it's encoded and not encrypted.

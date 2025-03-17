@@ -1,17 +1,10 @@
 const express = require('express');
 const app = express();
 app.use(express.json());
+const jwt = require('jsonwebtoken');
+const JWT_SECRET='JWT_SECRET';
 
-function generateToken() {
-    // Generate a unique token for the user
 
-    options=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','0','1','2','3','4','5','6','7','8','9'];
-    let token="";
-    for(let i=0;i<32;i++){
-        token+=options[Math.floor(Math.random()*options.length)];
-    }
-    return token;
-}
 users=[]
 app.get('/', (req, res) => {
   res.send('Hello from authentication!');
@@ -38,10 +31,8 @@ app.post('/signin', (req, res) => {
     const found= users.find(u => user.username === u.username && user.password === u.password);
     console.log(found);
     if (found) {
-        const token = generateToken();
+        const token = jwt.sign({username:user.username},JWT_SECRET); //convert username to jwt
         found.token = token;
-        // replace the user object with the token
-        // users.splice(users.indexOf(found), 1, found);,
         console.log(users);
         res.json({
             message: 'User found. You are signed in',
@@ -55,19 +46,24 @@ app.post('/signin', (req, res) => {
 });
 
 app.get('/me', (req, res) => {
-    const token = req.headers.token;
-    let username=null;
-    username= users.find(u=> u.token===token).username;
-
-
-    if(!username){
+    const jwttoken = req.headers.token;
+    try{
+    const decoded = jwt.verify(jwttoken,JWT_SECRET);//we will get username from jwt
+    console.log(decoded);
+    if(!decoded.username){
         res.status(401).json({
             message: 'You are not signed in',
         });
     }
     res.json({
-        message: 'Hello '+username,
+        message: 'Hello '+decoded.username,
     });
+    }catch(err){
+        res.status(401).json({
+            message: 'You are not signed in',
+        });
+    }
+   
 
 
 
