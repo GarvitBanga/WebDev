@@ -7,3 +7,9 @@ JSON web tokens are a compact and self contained way to represent information be
 Commonly used for authentication and information exchange in web applications.
 JWTs are Stateless-contain all information needed to authenticate a request, so the server doesn't need to store sesssion information. All the data is stored in the JWT itself.
 it's encoded and not encrypted.
+
+You can decode a JWT using the jwt.io website. But to verify the signature of the JWT, you need to have the public key of the server or the JWT secret.
+It lets you verify the signature of the JWT and decode the JWT.
+
+So JWT to username can be done by anyone but to verify that the JWT was created by the server and not by someone else, we need to have the public key of the server/JWT secret.
+
