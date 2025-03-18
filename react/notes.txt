@@ -1,0 +1,13 @@
+React
+
+React is a JavaScript library for building user interfaces.
+
+State and Component
+
+State is the data that is stored in a component. It is used to keep track of the data that is displayed in the component.
+
+Component is a part of the user interface that is responsible for rendering the data. It is a reusable, dynamic piece of code that can be used to build user interfaces. 
+It changes the state of the component and re-renders the component.
+
+A state change triggers a re-render of the component. A re-render is a process of updating the user interface to reflect the new state of the component.
+A re-render represents the actual DOM being manipulated when the state changes.
