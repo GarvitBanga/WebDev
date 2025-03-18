@@ -11,3 +11,6 @@ It changes the state of the component and re-renders the component.
 
 A state change triggers a re-render of the component. A re-render is a process of updating the user interface to reflect the new state of the component.
 A re-render represents the actual DOM being manipulated when the state changes.
+
+
+We just have to define all the components once and then all we have to do is update the state of your app and React takes care of re-render the components.
