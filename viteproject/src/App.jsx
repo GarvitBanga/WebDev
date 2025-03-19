@@ -38,18 +38,24 @@ function App() {
           </div>
           <br/>
           <div>
-          <PostComponent 
-            name={"Federico Valverde"}
-            followercount={"15M"}
-            promotion={true}
-            // time={"1hr ago"}
-            imageurl={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQsqY0De0-suArR9oVf_yu_Pqrvol2hMN5-A&s"}
-            description={"Ran 15km today"}
-            />
-          </div>
+            <PostComponent 
+              name={"Federico Valverde"}
+              followercount={"15M"}
+              promotion={true}
+              // time={"1hr ago"}
+              imageurl={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQsqY0De0-suArR9oVf_yu_Pqrvol2hMN5-A&s"}
+              description={"Ran 15km today"}
+              />
+          </div>       
           <br/>
+          {/* <div>
+          <ToggleMessage />
+          </div>
+          <br/> */}
         </div>
       </div>
+      <ToggleMessage />
+      <Notification/>
     </div>
   )
 }
@@ -83,5 +89,28 @@ function PostComponent({name,followercount,promotion,time,imageurl,description})
     </div>
   </div> 
 }
+function ToggleMessage(){
+  const [isVisible,setIsVisible]=useState(true); //state variable
+  // When the value of a state variable changes, the component will re-render.
+  function toggle(){
+    setIsVisible(!isVisible);
+  }
+  return <div>
+      <button onClick={toggle}>Toggle</button>
+      {isVisible && <div>Hello World</div>}
+    </div>
+}
+function Notification(){
+  const [notificationCount,setNotificationCount]=useState(0); //state variable
+  // When the value of a state variable changes, the component will re-render.
+  function increment(){
+    setNotificationCount(notificationCount+1);
+  }
+  return <div>
+      <button onClick={increment}>Increase Count</button>
+      {notificationCount}
+    </div>
+}
+
 
 export default App
