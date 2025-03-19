@@ -27,3 +27,15 @@ const [count,setCount]=useState(0);
 here the array is a constant and the first element is the state variable and the second element is the function to update the state variable
 So we can change the state variable by calling the function setCount(count+1);
 but we can't change the array itself as it is a constant. values inside the array can be changed by calling the function setCount(count+1);
+
+
+React Side Effects
+
+React components can have side effects.
+
+Side effects are code that runs outside of the component.
+Side effects are operations that interact with the outside world or have effects beyond the component's rendering.
+Ex- fetching data from an API, logging into a database, or interacting with a third-party service, modifying the DOM manually, starting a timer, or subscribing to a WebSocket. 
+
+
+ These are called side effects because they don't just compute output based on the inputs, they affect things outside the component.
