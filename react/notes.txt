@@ -38,4 +38,11 @@ Side effects are operations that interact with the outside world or have effects
 Ex- fetching data from an API, logging into a database, or interacting with a third-party service, modifying the DOM manually, starting a timer, or subscribing to a WebSocket. 
 
 
- These are called side effects because they don't just compute output based on the inputs, they affect things outside the component.
+These are called side effects because they don't just compute output based on the inputs, they affect things outside the component.
+
+Problem in running side effects in React components
+If you try to introduce side effects directly in the rendering logic of a component (in the return statement or before it), React would run that code every time the component renders. This can lead to:
+
+- Unnecessary or duplicated effects (like multiple API calls).
+- Inconsistent behavior (side effects might happen before rendering finishes).
+- Performance issues (side effects could block rendering or cause excessive re-rendering).
