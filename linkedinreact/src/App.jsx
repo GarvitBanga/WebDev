@@ -68,7 +68,29 @@ function App() {
             <div>
               {postComponents}
             </div>
-          </div>
+        </div>
+
+
+
+
+        <div>
+        {/* <div style={{display:"flex",justifyContent:"center"}}> */}
+          {/* <Card children={"hi there"}/>
+          <Card children={<div style={{color:"red"}}>hi there<br/> <input type="text"/></div>}/> */}
+          {/* another simple way to do this  */}
+          <Card>
+            <h2>Card Title</h2>
+            <p>Card Content</p>
+          </Card>
+          <Card>
+          <h2>Card Title</h2>
+            <div style={{color:"red"}}>
+              hi there<br/> 
+              <input type="text"/>
+            </div>
+          </Card>
+        </div>
+
       </div>
   )
 }
@@ -89,5 +111,15 @@ const Timer=function(){
   },[]);
   return <div>{seconds}seconds elapsed</div>
   }
-
+function Card({children}){
+  return <div style={{
+    border:'1px solid #ccc',
+    background:"white",
+    borderRadius:'5px',
+    padding:'20px',
+    color:"black",
+    margin:'10px',
+    boxShadow:'2px 2px 5px rgba(0,0,0,0.1)'
+  }}>{children}</div>
+}
 export default App
