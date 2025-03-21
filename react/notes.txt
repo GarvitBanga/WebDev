@@ -99,3 +99,49 @@ Error Boundaries are react components that catch JS errors in their child compon
 </> when returning from app
 we can also use <Fragment>
 </Fragment> importing from react to do the same 
+
+
+
+useState is a hook that lets you add state to functional components. it returns an array with two elements, the first element is the state variable and the second element is the function to update the state variable.
+
+
+
+useEffect will run only once when the component is mounted. 
+
+Mounting is the process of initializing a component and rendering it to the DOM. 
+
+When a component is mounted, we run the useEffect hook function. like setInterval will run only once when the component is mounted.
+
+setInterval(function()=>{
+    setCount(count+1);},1000);
+so instead of using setInterval we can use useEffect
+
+useEffect(()=>{
+    setInterval(()=>{
+        setCount(count+1);
+    },1000);
+},[]);
+
+[]
+is an empty array that is passed as a second argument to useEffect.
+
+this guards the setInterval function from running on every render.
+
+
+Recommended way to useState is:
+setCount(function(cnt{
+    return cnt+1;
+}));
+
+useEffect with clear interval do remember this
+const [count,setCount]=useState(0);
+useEffect(()=>{
+    let clock=setInterval(()=>{
+        console.log(count);
+        setCount(count+1);
+    },1000);
+
+    return function(){
+        clearInterval(clock);
+    }
+},[]);
