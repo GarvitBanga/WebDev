@@ -173,3 +173,8 @@ first console.log will run when the component is mounted.
 Now if the count changes so both the console.log lines will run when count changes as first the cleanupcode will run to unmount the previous component and then the new component will be mounted and the first console.log will run.
 
 If we don't pass any dependency array then useEffect will run only once when the component is mounted.
+
+
+In React, useRef is a hook that provides a way to create a reference to a value or a DOM element that persists across renders but does not trigger a re-render when the value changes.
+
+useRef gives a reference to a value such that when you change the value of the reference, the component doesn't re-render.

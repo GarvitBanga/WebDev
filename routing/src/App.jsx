@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import {BrowserRouter, Routes, Route,Link,useNavigate, Outlet} from 'react-router-dom';
+import Clock from './clock';
 function App() {
 
+  
   return (
    <div>
     JEE COACHING by Garvit Banga
@@ -24,15 +26,30 @@ function App() {
           <Route path='*' element={<ErrorPage/>}/>
         </Route>
       </Routes>
-    
+
     
     </BrowserRouter>
-   </div>
+
+    </div>
+    
   )
 }
 function Landing(){
+  const inputref=useRef(null);
+  function focusoninput(){
+    // document.getElementById("name").focus();
+    // not a good way to use document.get in react
+    // we will use useRef hook
+    
+    inputref.current.focus();
+  }
   return <div>
         Landing Page
+        SIGNUP
+    <input type="text" id="name" ref={inputref} placeholder='Enter your name'/>
+    <input type="text" id="password" placeholder='Enter your password'/>
+    <button onClick={focusoninput}>Login</button>
+    <Clock/>
     </div>
 }
 function Class11JEE(){
