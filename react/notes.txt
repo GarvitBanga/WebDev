@@ -145,3 +145,31 @@ useEffect(()=>{
         clearInterval(clock);
     }
 },[]);
+
+The code we write inside useEffect is used at the time of mounting and ignored during re-renders and the function we return from useEffect is called at the time of unmounting.
+
+useEffect(function(){
+    console.log("mounted");
+    return function(){
+        console.log("unmounted");
+    }
+},[]);
+As useEffect only runs when the component is mounted but we can pass state variables in Dependency array so that useEffect also runs  when the state variable changes.
+Dependency array 
+
+useEffect(()=>{
+    console.log("count has changed");
+},[count]);
+
+
+useEffect(()=>{
+    console.log("count has changed");
+    return function(){
+        console.log("cleanup inside useEffect");
+    }
+},[count]);
+
+first console.log will run when the component is mounted.
+Now if the count changes so both the console.log lines will run when count changes as first the cleanupcode will run to unmount the previous component and then the new component will be mounted and the first console.log will run.
+
+If we don't pass any dependency array then useEffect will run only once when the component is mounted.
