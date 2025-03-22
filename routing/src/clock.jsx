@@ -30,8 +30,18 @@ export default function Clock() {
     // }
 
 
-    // this code does work but it is not the best way to do it as it does an extra re-render
+    // the code above does work but it is not the best way to do it as it does an extra re-render as when the start button is clicked the timer variable is updated which re-renders the component it does a re render then also which is not needed as we are not displaying the timer in HTML so it should re-render after 1 sec but it does re-render when the button is clicked and after 1 sec as well.
+    // As when the start button is pressed we don't need to change the time displayed at that moment but after 1sec so that's why it is an extra re-render
+    // This extra re-render can be avoided by using useRef hook
 
+
+  
+
+
+
+
+
+    // this code works
     const timer =useRef();
      function startClock() {
        let value=setInterval(() => {
