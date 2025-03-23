@@ -216,3 +216,9 @@ Atoms are units of state that can be read from and written to from any component
 
 
 when a component re-renders, all its children re-render as well.
+
+
+Memo-
+in react, anytime a component re-renders, all its children re-render as well. but if you wrap a component in a memo, only if the props/state in that child has changed only then it will re-render.
+
+A selector represents a piece of derived state. You can think of derived state as the output of passing state to a pure function that derives a new value from the said state. Derived state is a powerful concept because it lets us build dynamic data that depends on other data.
