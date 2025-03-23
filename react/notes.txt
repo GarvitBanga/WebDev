@@ -192,3 +192,16 @@ The Context API provides a way to share values (state, functions, etc.) between 
 - Context: This is created using `React.createContext()`. It serves as a container for the data you want to share.
 - Provider: This component wraps part of your application and provides the context value to all its descendants. Any component that is a child of this Provider can access the context.
 - Consumer: This component subscribes to context changes. It allows you to access the context value (using `useContext`  hook)
+
+
+
+Custom hooks in React are a powerful feature that allows you to encapsulate and reuse stateful logic across different components. They are essentially JavaScript functions that can use React hooks internally. By creating custom hooks, you can abstract away complex logic, making your components cleaner and more manageable.
+ If you find yourself using the same logic in multiple components, a custom hook can help you avoid code duplication.
+ They allow you to separate business logic from UI logic, making your components more focused and easier to understand.
+
+
+ Explore https://usehooks.com/
+
+ https://giacomocerquone.com/blog/life-death-useprevious-hook/
+
+ useDebounce function
