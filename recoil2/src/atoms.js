@@ -1,5 +1,7 @@
-import { atom, selector } from 'recoil';
-
+import { atom, atomFamily, selector, selectorFamily } from 'recoil';
+import {TODOS} from './todos';
+import axios from 'axios';
+import { useEffect, useRef } from 'react';
 export const networkAtom=atom({
     key:"networkatom",
     default:102
@@ -44,3 +46,26 @@ export const totalnotificationselector=selector({
     }
 });
 
+
+
+export const todosAtomFamily=atomFamily({
+    key:"todosAtomFamily",
+    default:id=>{
+        return TODOS.find(x=>x.id==id);
+    }
+});
+
+export const todosAtomFamilyselector=atomFamily({
+    key:"todosAtomFamilyselector",
+    default:selectorFamily({
+        key:"todosfamilyselector",
+        get:function(id){
+            return async function({get}){
+
+            await new Promise(resolve=>setTimeout(resolve,5000)); //this is to simulate a delay which leads to website being empty for a while
+            const res=await axios.get("https://jsonplaceholder.typicode.com/todos/"+id);
+            return res.data;
+        }
+        }
+    })
+});
