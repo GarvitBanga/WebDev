@@ -1,0 +1,18 @@
+npm install -D tailwindcss@3 postcss autoprefixer
+-D for dev dependencies which won't be installed in production
+
+ npx tailwindcss init -p
+
+
+ add content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"] to tailwind.config.js
+
+add these lines to index.css and app.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+https://tailwindcss.com/
+
+
+Tailwind uses a mobile-first breakpoint system that allows you to create responsive designs that adapt to any screen size.

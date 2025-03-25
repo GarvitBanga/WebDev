@@ -8,26 +8,43 @@ function App() {
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className='bg-blue-500 text-black'>Hello</div>
+      {/* <div style={{display:"flex", justifyContent:"space-between"}}> */}
+      {/* same as above */}
+      {/* <div className='flex justify-center'></div> */}
+      <div className='flex justify-between'> 
+
+        <div className='bg-blue-500 text-black'>Hello1</div>
+        <div className='bg-blue-500 text-black'>Hello2</div> 
+        <div className='bg-blue-500 text-black'>Hello3</div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+      <div className='grid grid-cols-12'>
+        <div className='bg-green-300 col-span-4'>Hellodiv1</div>
+        <div className='bg-red-300 col-span-6'>Hellodiv2</div>
+        <div className='bg-pink-300 col-span-2'>Hellodiv3</div>
+
+
+
+
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+{/*sm:bg-blue-300 bg-red-300 as bg-red-300 is the unprefixed utility it takes effect on all screen sizes and prefixed will appear at and above the breakpoint till another breakpoint so from sm to large screen blue will appear on all screen sizes and below sm red will appear*/}
+      <div className='sm:bg-blue-300 bg-red-300'>
+        Hellocoloureddiv
+      </div>
+
+
+
+
+      <div className='grid grid-cols-12'>
+        <div className='bg-green-300 col-span-12 sm:col-span-5'>Hellodiv1</div>
+        <div className='bg-red-300 col-span-12 sm:col-span-5'>Hellodiv2</div>
+        <div className='bg-pink-300 col-span-12 sm:col-span-2'>Hellodiv3</div>
+
+
+
+      </div>
     </>
   )
 }
