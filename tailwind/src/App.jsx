@@ -53,7 +53,7 @@ function App() {
       <Button disabled={false}>Sign Up</Button>
       <Input type="text" placeholder="Enter your name"/>
       
-      <Otp/>
+      <Otp number={10}/>
       </div>
       </div>
     </>

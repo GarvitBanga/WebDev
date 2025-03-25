@@ -1,21 +1,21 @@
 import { useState } from 'react';
 import { useRef } from 'react';
 import { Button } from './Buttons';
-export function Otp(){
-    const ref1=useRef();
-    const ref2=useRef();
-    const ref3=useRef();
-    const ref4=useRef();
-    const ref5=useRef();
-    const ref6=useRef();
+export function Otp({number}){
+    const ref=useRef(Array(number).fill(0));
     const [btndisabled,setBtndisabled]=useState(true);
     return <div className="flex justify-center">
-        <SubOTP ref={ref1} onDone={()=>{ref2.current.focus()}} goBack={()=>{ref1.current.focus()}}/> 
-        <SubOTP ref={ref2} onDone={()=>{ref3.current.focus()}} goBack={()=>{ref1.current.focus()}}/>
-        <SubOTP ref={ref3} onDone={()=>{ref4.current.focus()}} goBack={()=>{ref2.current.focus()}}/>
-        <SubOTP ref={ref4} onDone={()=>{ref5.current.focus()}} goBack={()=>{ref3.current.focus()}}/>
-        <SubOTP ref={ref5} onDone={()=>{ref6.current.focus()}} goBack={()=>{ref4.current.focus()}}/>
-        <SubOTP ref={ref6} onDone={()=>{ref6.current.focus(); setBtndisabled(false)}} goBack={()=>{ref5.current.focus()}}/>
+        {Array(number).fill(1).map((x,index)=>{
+            return <SubOTP key={index} ref={(e)=>ref.current[index]=e} onDone={()=>{
+                if(index+1>=number)return;
+                ref.current[index+1].focus()
+                if(index+1==number-1)setBtndisabled(false);
+            }} goBack={()=>{
+                if(index==0)return;
+                ref.current[index-1].focus()}}/>
+        }
+
+        )}
             <br/>
         <Button disabled={btndisabled}>Submit</Button>
     </div>
