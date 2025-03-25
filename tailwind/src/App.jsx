@@ -2,7 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-
+import { Button } from './components/Buttons'
+import { Input } from './components/Input'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -38,12 +39,17 @@ function App() {
 
 
       <div className='grid grid-cols-12'>
-        <div className='bg-green-300 col-span-12 sm:col-span-5'>Hellodiv1</div>
-        <div className='bg-red-300 col-span-12 sm:col-span-5'>Hellodiv2</div>
-        <div className='bg-pink-300 col-span-12 sm:col-span-2'>Hellodiv3</div>
+        <div className='bg-green-300 col-span-12 sm:col-span-5 text-5xl rounded-xl'>Hellodiv1</div>
+        <div className='bg-red-300 col-span-12 sm:col-span-5 rounded-xl'>Hellodiv2</div>
+        <div className='bg-pink-300 col-span-12 sm:col-span-2 rounded-xl'>Hellodiv3</div>
 
 
 
+      </div>
+
+      <div className='h-screen'>
+      <Button disabled={false}>Sign Up</Button>
+      <Input type="text" placeholder="Enter your name"/>
       </div>
     </>
   )
