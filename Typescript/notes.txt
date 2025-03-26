@@ -1,0 +1,30 @@
+Typescript is a statically typed superset of JavaScript that compiles to plain JavaScript.
+Typescript code never runs in your browser. Your browser can only understand javascript. 
+Javascript is the runtime language (the thing that actually runs in your browser/nodejs runtime)
+Typescript is something that compiles down to javascript
+When typescript is compiled down to javascript, you get type checking (similar to C++). If there is an error, the conversion to Javascript fails.
+
+npm init -y
+npm install typescript
+npx tsc --init
+
+
+npx tsc -b 
+build JS file from TS file so that it can be run in the browser using node
+
+No need to upload Js files to the git or server just TS files shoud be enough as running tsc will create the JS files
+
+So that's why we shift TS files to src folder
+and then we will enter rootDir in tsconfig.json to be as ./src
+
+    "rootDir": "./src", 
+    "outDir": "./dist",
+
+Now we can enter the outdir folder in gitignore and it will not be uploaded to the git
+
+
+you can also remove comments from the code
+
+
+You can tunr this to false if you want to use any type
+ // "noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied 'any' type. */
