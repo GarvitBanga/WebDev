@@ -46,3 +46,6 @@ Abstract classes vs Interfaces
 Abstract classes can also be implemented by classes
 
 in case of Abstract class you can also give default implementation for methods
+
+
+Pick and Partial and READONLY and Record and Map
