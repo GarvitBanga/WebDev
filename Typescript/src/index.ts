@@ -38,3 +38,58 @@ function f(){
     console.log("Hello World");
 }
 fn(f);
+
+
+function greetobject(user:{
+    name:string,
+    age:number
+}){
+    console.log(user.name);
+}
+let user={
+    name:"garvitbanga",
+    age:26
+}
+
+// defining types for objects
+let user2:{
+    name:string,
+    age:number
+}={
+    name:"garvitbangatypescript",
+    age:26
+}
+greetobject(user);
+greetobject(user2);
+
+
+// But we have repeated this definition in greetobject function as well as in user2
+// We can use interface to define the type of the object
+
+interface User{
+    name:string,
+    age:number
+};
+type Usertype={
+    name:string,
+    age:number
+};
+
+let user3:User={
+    name:"garvitbanga",
+    age:26
+};
+let user4:Usertype={
+    name:"garvitbangatypescripttype",
+    age:26
+}
+function greetinterface(user:User){
+    console.log(user.name);
+}
+greetinterface(user3);
+greetinterface(user4);
+
+let a:string|number="hello";
+type stringornumber=string|number;
+let b:stringornumber="hello";
+b=10;

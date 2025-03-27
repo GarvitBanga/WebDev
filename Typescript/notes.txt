@@ -28,3 +28,12 @@ you can also remove comments from the code
 
 You can tunr this to false if you want to use any type
  // "noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied 'any' type. */
+
+
+ INTERFACES and TYPES
+
+ type can do unions let a:string|number="hello";
+ type stringornumber=string|number;
+ interface cant do unions
+ same for intersections
+ 
