@@ -88,3 +88,83 @@ const user31:Readonly<User2>={
     password:"123456"
 }
 // this also works for interfaces which are not readonly but you want to make a object readonly
+
+
+// Record and map
+
+
+type Usertyp1={
+    id:string,
+    username:string
+}
+type Userstype={ //this looks ugly
+    [key:string]:Usertyp1;
+}
+const users:Userstype={
+    "ras1q@d":{
+        id:"ras1q@d",
+        username:"federico",
+    },
+    "ras2q@d":{
+        id:"ras2q@d",
+        username:"valverde",
+    },
+
+}
+type Userstyperecord=Record<string,Usertyp1>;
+// replacement for Userstype
+// type Userstype={ //this looks ugly
+// [key:string]:Usertyp1;
+// }
+
+// MAP
+
+const usermap=new Map<string,Usertyp1>();
+
+usermap.set("ras1q@d",{
+    id:"ras1q@d",   
+    username:"federico",
+});
+usermap.set("ras2q@d",{
+    id:"ras2q@d",
+    username:"valverde",
+});
+console.log(usermap.get("ras1q@d"));
+ 
+// Exclude is similar to Pick but it excludes the keys
+type Eventype='click'|'hover'|'scroll';
+type ExcludeEvent=Exclude<Eventype,'scroll'>;
+
+const handleevnet=(event:Eventype)=>{
+    console.log(event);
+}   
+handleevnet('click');
+
+
+
+
+// Type Inference in zod
+import z from 'zod';
+
+const schema=z.object({
+    name:z.string(),    
+    email:z.string().email(),
+    age:z.number().min(18).max(30).optional(),
+});
+
+
+type Finalschematype=z.infer<typeof schema>;
+
+import express from 'express';
+const app=express();
+app.use(express.json());
+app.put('/user',function(req,res){    
+    const {success}=schema.safeParse(req.body);
+    const updatebody:Finalschematype=req.body;
+    // assigning a type to updatebody
+    if(!success){
+        res.status(400).json({message:'Error in updating user'});
+        return;
+    }
+    res.json({message:'User updated successfully'});
+});
