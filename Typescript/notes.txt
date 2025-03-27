@@ -50,3 +50,8 @@ in case of Abstract class you can also give default implementation for methods
 
 Pick and Partial and READONLY and Record and Map
 
+
+
+npm i --save-dev @types/express
+to install types for express in typescript  project
+
