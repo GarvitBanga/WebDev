@@ -35,5 +35,14 @@ You can tunr this to false if you want to use any type
  type can do unions let a:string|number="hello";
  type stringornumber=string|number;
  interface cant do unions
- same for intersections
- 
+ interface cant do intersections
+
+difference between interfaces and types
+ Interfaces can be implemented by classes
+ interfaces can have optional fields
+
+
+Abstract classes vs Interfaces
+Abstract classes can also be implemented by classes
+
+in case of Abstract class you can also give default implementation for methods
