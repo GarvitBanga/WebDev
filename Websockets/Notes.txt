@@ -41,3 +41,6 @@ Sockets cannot be stored in DB.
 video 1hr:40
 
 Thats why scaling websockets is hard.
+
+
+For sending multiple requests use Hopscotch/postwoman
