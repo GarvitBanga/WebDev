@@ -1,0 +1,43 @@
+WebSockets provide a way to establish a persistent, full-duplex communication channel over a single TCP connection between the client (typically a web browser) and the server.
+
+axios.get is not a persistent connection and it will close after every request
+It does a 3 way handshake.
+
+WebSockets are a persistent connection. It will keep the connection open even after the request is closed.
+It also does a 3 way handshake but the connection is not closed after the request is closed.
+
+full duplex means both the client and the server can send and receive data at the same time.
+TCP connection and UDP connections are most common.
+
+
+HTTP and Websockets use HTTP protocol.
+
+OSI model 
+
+Why do we need websockets?
+For the Real time communication(RTC)
+Can't use http after every 5ms as it will be slow as we will need to send multiple requests after every 5ms.
+
+Websockets won't send multiple requests as it will keep the connection open.
+Websockets are a persistent connection.
+So server can send data every 5ms for example when large amount of data needs to be sent very frequently.
+
+
+Use Cases for WebSockets:
+- Real-Time Applications: Chat applications, live sports updates, real-time gaming, and any application requiring instant updates can benefit from WebSockets.
+- Live Feeds: Financial tickers, news feeds, and social media updates are examples where WebSockets can be used to push live data to users.
+- Interactive Services: Collaborative editing tools, live customer support chat, and interactive webinars can use WebSockets to enhance user interactio
+
+In HTTP server can't initiate a request as it needs browser to initiate the request.
+but in websockets server can send data to the client.
+
+HTTP can use polling/long polling to do so in case you are restricted to use HTTP.
+Polling/Long Polling means asking the server if it has any new data for the client.
+
+Websockets are not stateless. 
+they are sticky stateful.
+
+Sockets cannot be stored in DB. 
+video 1hr:40
+
+Thats why scaling websockets is hard.
