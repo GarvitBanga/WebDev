@@ -1,0 +1,11 @@
+on delete cascade means when a user is deleted all the addresses associated with that user will be deleted as well
+while using it with foreign key means that if a user is deleted all the addresses associated with that user will be deleted as well.
+
+
+on delete restrict means that a user can only be deleted if all the addresses associated with that user are deleted.
+
+
+Inner Join: Returns rows with matches in both tables.
+Left Join: Returns all rows from the left table and matches from the right table; unmatched rows have NULL values.
+Right Join: Returns all rows from the right table and matches from the left table; unmatched rows have NULL values.
+Full Outer Join: Returns all rows from both tables; unmatched rows have NULL values.
