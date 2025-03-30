@@ -1,0 +1,17 @@
+react is not good for SEO because google crawler doesn't execute javascript and it only crawls the first request
+the first request is the one that loads the html and css and javascript that is index.js
+in react projects index.js is the entry point which carries the tsx files to populate the html
+so thats why react is not good for SEO
+NextJS is a framework for building server-side rendered applications
+
+Waterfalling problem in react is that the first request is the one that loads the html and css and javascript that is index.js.
+
+React does client side rendering.
+NextJS does server side rendering.
+
+
+NextJS needs a server to run the application which will return the loaded page to the browser for better SEO in the first request. this talks with backend server to populate everything on the page.
+
+Reacr can use CDN to load the javascript and css files.
+
+npx create-next-app@latest
