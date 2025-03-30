@@ -15,3 +15,9 @@ NextJS needs a server to run the application which will return the loaded page t
 Reacr can use CDN to load the javascript and css files.
 
 npx create-next-app@latest
+
+
+Server side components cannot use useState hook and useEffect hook.
+if you want to use useState hook and useEffect hook in server side components 
+you need to specify the component as a client component.
+"use client"; in the first line of the tsx file
