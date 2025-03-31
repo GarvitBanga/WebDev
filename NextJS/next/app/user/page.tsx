@@ -1,7 +1,7 @@
-export default function Users() {
+export default function User() {
   return (
     <div>
-      <h1>Users</h1>
+      <h1>User Hi</h1>
     </div>
   );
 }

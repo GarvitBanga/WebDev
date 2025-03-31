@@ -21,3 +21,9 @@ Server side components cannot use useState hook and useEffect hook.
 if you want to use useState hook and useEffect hook in server side components 
 you need to specify the component as a client component.
 "use client"; in the first line of the tsx file
+
+
+() in folder name means that it is a dynamic route so anything inside (auth) let's say (auth)/signin/page.tsx will be a dynamic route we can directly go localhost:3000/signin
+
+
+[] in folder name means that it is a dynamic route so anything inside todos/[id] id is a dynamic route we can directly go localhost:3000/todos/1 to see the todo with id 1
