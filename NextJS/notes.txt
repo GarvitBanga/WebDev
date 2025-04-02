@@ -31,3 +31,24 @@ you need to specify the component as a client component.
 
 Static site generation in next js
 It identifies the pages that are statically generated and generates them at build time.
+
+Even a client side component is server side rendered.
+Hydration is the process by which a client-side JS framework like react takes over an already-rendered HTML page and makes it interactive.
+In NextJS application, pages are often server-side rendered(SSR) or statically generated(SSG).The server sends a fully formed HTML document to the browser, allowing users to see meaningful content quickly(good for SEO).
+Once the page arrvies in the browser,react's JS bundle hydrates that static HTML by attaching event listeners and other interactive behaviors so that the page becomes a fully functional React application.
+
+
+<body class="__variable_4d318d __variable_ea5f4b antialiased">
+        <div>
+            Hello<button>Click me 
+            <!-- -->
+            0</button>
+        </div>
+        <!--$-->
+        <!--/$-->
+        <!--$-->
+        <!--/$-->
+       scripts.....
+</body>
+
+but the first request that the browser received had the html but no onclick handler or JS code which will be executed on the client side using the scripts that are loaded in the head of the html.
