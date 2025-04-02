@@ -27,3 +27,7 @@ you need to specify the component as a client component.
 
 
 [] in folder name means that it is a dynamic route so anything inside todos/[id] id is a dynamic route we can directly go localhost:3000/todos/1 to see the todo with id 1
+
+
+Static site generation in next js
+It identifies the pages that are statically generated and generates them at build time.
