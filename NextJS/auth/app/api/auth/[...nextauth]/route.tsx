@@ -37,6 +37,7 @@ const authHandler = NextAuth({
                 // db request to check if username and password are correct
                 const user={
                     username:"garvit",
+                    name:"dcwfwddwxwx",
                     id:"1",
                     password:"123456"
                 };
@@ -54,11 +55,12 @@ const authHandler = NextAuth({
             clientId:"ewddscs",
             clientSecret:"wecdxdcs"
         })
-    ]
+    ],
+    secret:process.env.NEXTAUTH_SECRET
 });
 
 
 export {authHandler as GET,authHandler as POST};
 // another way to do it
 // export const GET=authHandler;
-// export const POST=authHandler2;
+// export const POST=authHandler;
