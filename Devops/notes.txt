@@ -1,0 +1,5 @@
+on AWS server it prevents to start the process on ports like 80,443,13,etc. OS prevents.
+Can use sudo to run the process as root.
+
+
+SO we will use nginx to run the process on port 80 which will redirect to the process running on port 8080 or other ports depending on the request.
