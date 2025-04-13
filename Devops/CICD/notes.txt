@@ -1,0 +1,33 @@
+Process management
+Keeps a process running unless stopped explicitely
+Keeps apps running continuously.
+Automatically restarts crashed apps.
+Provides monitoring and logging.
+Supports running multiple app instances for better performance.
+
+npm i -g pm2
+
+pm2 start app.js
+
+- curl: similar to postman but for terminal
+- lsof: this gives you the process id for a given port
+
+
+pm2 delete app
+pm2 restart app
+pm2 stop app
+pm2 start app.js 
+
+
+Continuous Integration**
+
+Continuous Integration (CI) is a development practice where developers frequently integrate their code changes into a shared repository, preferably several times a day. Each integration is automatically verified by
+
+1. Building the project and
+2. Running automated tests.
+
+This process allows teams to detect problems early, improve software quality, and reduce the time it takes to validate and release new software updates.
+
+Continuous Deployment**
+
+As the name suggests, deploying your code `continuously` to various environments (dev/stage/prod)
