@@ -11,3 +11,35 @@ sudo nginx -s reload
 
 Docker and Containers
 Containers are a way to package and distribute software applications in a way that makes them easy to deploy and run consistently across different environments. They allow you to package an application, along with all its dependencies and libraries, into a single unit that can be run on any machine with a container runtime, such as Docker.
+
+Docker Images vs Containers
+A Docker image is a lightweight, standalone executable package that includes everything needed to run a piece of software, including the code, runtime, system tools, libraries, and settings. It is designed to be used as a base for building other Docker images.
+A container is a running instance of an image that runs in a Docker container runtime.
+
+image- everything needed to run a piece of software
+container- running instance of an image
+
+docker run -p 27017:27017 mongo
+we run the container here.
+it first finds whether the image is already present on the system or not.
+if not it will download the image from the registry.
+after that it will run the container.
+
+docker images list all the images present on the system.
+docker ps list all the containers present on the system.
+
+docker run -p 27017:27017 mongo
+machine's port 27017 is mapped to the container's port 27017.
+ports:
+0.0.0.0:27017->27017/tcp
+docker run -p 27018:27017 mongo
+machine's port 27018 is mapped to the container's port 27017.
+ports:
+0.0.0.0:27018->27017/tcp
+
+
+docker exec -it mongodb sh
+this will run the command in the container. -it means interactive and tty.
+
+docker build -t mongo .
+this will build the image from the Dockerfile.
