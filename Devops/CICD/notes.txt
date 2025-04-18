@@ -31,3 +31,17 @@ This process allows teams to detect problems early, improve software quality, an
 Continuous Deployment**
 
 As the name suggests, deploying your code `continuously` to various environments (dev/stage/prod)
+
+
+# Some special files in github
+
+In a codebase if a file is inside of `.github/workflows`
+
+It is considered a CI file which means github will run the contents of the files whenever the conditions are met.
+
+## Some useful cases where this might be handy:
+
+- To run unit/integrated tests
+- To run lint/format checking
+- To build the application
+- Deploy it whenever someone pushes their code

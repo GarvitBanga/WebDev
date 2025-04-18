@@ -3,3 +3,11 @@ Can use sudo to run the process as root.
 
 
 SO we will use nginx to run the process on port 80 which will redirect to the process running on port 8080 or other ports depending on the request.
+
+sudo vi /etc/nginx/nginx.conf
+
+sudo nginx -s reload
+
+
+Docker and Containers
+Containers are a way to package and distribute software applications in a way that makes them easy to deploy and run consistently across different environments. They allow you to package an application, along with all its dependencies and libraries, into a single unit that can be run on any machine with a container runtime, such as Docker.
