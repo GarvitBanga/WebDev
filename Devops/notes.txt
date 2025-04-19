@@ -43,3 +43,46 @@ this will run the command in the container. -it means interactive and tty.
 
 docker build -t mongo .
 this will build the image from the Dockerfile.
+
+
+In the dockerfile
+COPY . .
+
+RUN npm install
+# RUN npm run build
+
+EXPOSE 3000
+# till here the image is created
+CMD ["node", "index.js"]
+
+# only one command can be run in the dockerfile and it will be executed when the container is created
+
+
+even if we change the code slightly npm install runs again even though the package.json is not changed.
+only the steps above these are cached.
+
+now to avoid this and optimise.
+ So we will use something like this:
+
+
+ COPY ./package.json ./package.json
+ COPY ./package-lock.json ./package-lock.json
+ RUN npm install
+ COPY . .
+ RUN npm run build
+ EXPOSE 3000
+    
+this will copy the package.json and package-lock.json to the container and install the dependencies.
+then it will copy the rest of the files to the container and run the build command.
+
+now if we change the code slightly npm install will not run again.
+only the steps above these are cached. 
+
+
+
+Docker Containers are stateless and doesn't retain any data.
+They are created from an image and then they are destroyed when the container is destroyed.
+
+To retain data we need to use volumes.
+Volumes are directories that are mounted from the host machine to the container.
+The data in the volume is not deleted when the container is destroyed.

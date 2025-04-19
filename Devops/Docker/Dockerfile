@@ -2,11 +2,15 @@ FROM node:22-alpine
 
 WORKDIR /app
 
-# COPY . .
-COPY package*.json ./
-COPY index.js ./
-
+COPY ./package.json ./package.json
+COPY ./package-lock.json ./package-lock.json
 RUN npm install
+
+COPY . .
+# COPY package*.json ./
+# COPY index.js ./
+
+
 # RUN npm run build
 
 EXPOSE 3000
