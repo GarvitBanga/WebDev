@@ -86,3 +86,5 @@ They are created from an image and then they are destroyed when the container is
 To retain data we need to use volumes.
 Volumes are directories that are mounted from the host machine to the container.
 The data in the volume is not deleted when the container is destroyed.
+
+ docker run -p 27017:27017 -v mongo_db_data:/data/db mongo
