@@ -88,3 +88,11 @@ Volumes are directories that are mounted from the host machine to the container.
 The data in the volume is not deleted when the container is destroyed.
 
  docker run -p 27017:27017 -v mongo_db_data:/data/db mongo
+
+ docker network create my-network
+ docker network for letting 2 containers to communicate with each other
+
+  docker run -p 27017:27017 --network my-network -v mongo_db_data:/data/db mongo 
+
+  now in the other container we can connect to the mongodb using the hostname
+  mongodb://mongo:27017 
