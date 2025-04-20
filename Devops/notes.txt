@@ -96,3 +96,7 @@ The data in the volume is not deleted when the container is destroyed.
 
   now in the other container we can connect to the mongodb using the hostname
   mongodb://mongo:27017 
+
+
+
+docker run -e POSTGRES_PASSWORD=mysecretpwd -d -p 5432:5432 postgres
